@@ -1,3 +1,4 @@
+//updated for July 2022
 #include <DigiKeyboard.h>
 #define KEY_TAB 43
 #define KEY_DOWN_ARROW  0x51
@@ -53,18 +54,21 @@ void setup() {
 
   //Google Chrome OS Terms
   DigiKeyboard.sendKeyStroke(KEY_TAB,MOD_SHIFT_LEFT);
-  pressKey(KEY_TAB, 3);
+  DigiKeyboard.sendKeyStroke(KEY_TAB,MOD_SHIFT_LEFT);
+  DigiKeyboard.sendKeyStroke(KEY_TAB,MOD_SHIFT_LEFT);
   pressKey(KEY_SPACE, 1); //Turn off feedback
   pressKey(KEY_TAB, 3);
   pressKey(KEY_ENTER, 1);
 
-  wait(15);//Updates
+  wait(45);//Updates
 
   //Enterprise Enrollment
   pressKey(KEY_TAB, 3);
+  pressKey(KEY_SPACE, 1);
+  pressKey(KEY_DOWN_ARROW, 1);
   pressKey(KEY_ENTER, 1);
   wait(5);
-  pressKey(KEY_TAB, 6); 
+  // pressKey(KEY_TAB, 6); 
 
 
   DigiKeyboard.print(email);
